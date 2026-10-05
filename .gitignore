@@ -1,0 +1,15 @@
+node_modules/
+
+# Local credentials and environment overrides
+.env
+.env.*
+!.env.example
+.aws/
+.npmrc
+*.pem
+*.key
+
+# Generated release archives and local logs
+*.tgz
+*.log
+.DS_Store
