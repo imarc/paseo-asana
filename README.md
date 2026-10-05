@@ -92,7 +92,21 @@ The entry points are `index.client.tsx` and `index.server.ts`. UI code lives in 
 
 ## Distribution
 
-The release version is **0.1.0**. GitHub installation does not require npm publication; `private: true` intentionally prevents accidental npm publishing.
+The release version is **0.1.0**. The public npm package name is `paseo-asana`. GitHub installation is available independently of npm publication.
+
+To publish from a checkout with the npm publishing configuration, after authenticating with `npm login`:
+
+```sh
+npm run typecheck
+npm pack --dry-run
+npm publish --access public
+```
+
+Once the package is published, install it with:
+
+```sh
+paseo plugin install npm:paseo-asana@0.1.0
+```
 
 Before publishing, run `npm run typecheck` and `npm pack --dry-run`, review the repository and its Git history for credentials, and test a clean installation. The npm `files` allowlist limits package contents, not what Git publishes; `.gitignore` does not remove previously committed secrets.
 

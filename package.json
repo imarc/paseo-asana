@@ -1,6 +1,5 @@
 {
   "name": "paseo-asana",
-  "private": true,
   "version": "0.1.0",
   "files": [
     "paseo-plugin.json",
@@ -34,5 +33,9 @@
   "homepage": "https://github.com/imarc/paseo-asana#readme",
   "bugs": {
     "url": "https://github.com/imarc/paseo-asana/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }
