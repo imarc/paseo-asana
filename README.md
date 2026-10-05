@@ -21,15 +21,35 @@ Version 0.1.0 typechecks against `@getpaseo/plugin` 0.9.2 and 0.10.3. These are 
 
 ## Install
 
-### From GitHub
+### Tagged release (recommended)
 
-Install from the [GitHub repository](https://github.com/imarc/paseo-asana):
+Install the **v0.1.0** release from the [GitHub repository](https://github.com/imarc/paseo-asana), rather than the latest development code:
+
+```sh
+paseo plugin install github:imarc/paseo-asana --ref v0.1.0
+```
+
+`--ref` selects the tag for this installation; it does not permanently pin future updates. Paseo's Git update command can offer the latest default-branch revision instead.
+
+### Latest from GitHub
+
+To install the latest code from the default branch (`main`), which may include unreleased changes, omit `--ref`:
 
 ```sh
 paseo plugin install github:imarc/paseo-asana
 ```
 
 Alternatively, enter `github:imarc/paseo-asana` in **Settings → Plugins → Plugin source** on the target host. Enable plugins if necessary, and verify that `paseo-asana` is running.
+
+### Published npm release
+
+The same release version is also available on [npm](https://www.npmjs.com/package/paseo-asana):
+
+```sh
+paseo plugin install npm:paseo-asana@0.1.0
+```
+
+Alternatively, enter `npm:paseo-asana@0.1.0` in **Settings → Plugins → Plugin source**.
 
 ### From a local checkout
 
@@ -100,12 +120,6 @@ To publish from a checkout with the npm publishing configuration, after authenti
 npm run typecheck
 npm pack --dry-run
 npm publish --access public
-```
-
-Once the package is published, install it with:
-
-```sh
-paseo plugin install npm:paseo-asana@0.1.0
 ```
 
 Before publishing, run `npm run typecheck` and `npm pack --dry-run`, review the repository and its Git history for credentials, and test a clean installation. The npm `files` allowlist limits package contents, not what Git publishes; `.gitignore` does not remove previously committed secrets.
